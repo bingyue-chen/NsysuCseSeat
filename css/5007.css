@@ -39,10 +39,31 @@ hr {
 	color: #0E87A6;
 }
 
+.room{
+	display: none;
+}
+
 .seatmap img {
-	max-width: 100%;
+	max-width: 80%;
 	display: block;
 	margin : 0 auto; 
+}
+
+.displaymsg {
+	margin: 0 auto;
+	padding: 25px;
+	margin-top: 50px;
+	overflow: auto;
+	background-color: #EEE;
+}
+
+.displaymsg p{
+	line-height: 25px;
+}
+
+.sendmsg {
+	margin: 0 auto;
+	padding: 25px;
 }
 
 .footer {
@@ -56,3 +77,5 @@ hr {
 	text-indent: 5px;
 	font-size: 18px;
 }
+
+

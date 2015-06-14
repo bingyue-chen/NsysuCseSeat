@@ -5,6 +5,7 @@
 	<title>5007</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.min.css">
 	<link rel="stylesheet" href="../css/5007.css">
 </head>
 <body>
@@ -48,15 +49,71 @@
 
 		<hr>
 
-		<ul class="nav nav-pills nav-justified">
-  			<li role="presentation" class="active"><a href="#">Seatmap</a></li>
-  			<li role="presentation"><a href="#">Cheat room</a></li>
-  			<li role="presentation"><a href="#">Question room</a></li>
+		<ul class="nav nav-pills nav-justified" id="selectroom" >
+  			<li role="presentation" data="seatmap" class="active"><a href="#Seatmap">Seatmap</a></li>
+  			<li role="presentation" data="chatroom"><a href="#Chat room">Chat room</a></li>
+  			<li role="presentation" data="qroom"><a href="#Question room">Question room</a></li>
 		</ul>
-			
-		<div class="seatmap">
+		
+		<div class="seatmap" >
 			<img src="../img/5007.png">
-		</div>
+		</div><!-- seatmap -->
+
+		<div class="chatroom">
+
+			<div class="displaymsg">
+				<p>feugiat nunc sit quisque</p>
+				<p>vestibulum sit amet turpis</p>
+				<p>magnis interdum pharetra eleifend pulvinar ante lobortis et vel quis</p>
+				<p>feugiat nunc sit quisque</p>
+				<p>vestibulum sit amet turpis</p>
+				<p>magnis interdum pharetra eleifend pulvinar ante lobortis et vel quis</p>
+				<p>feugiat nunc sit quisque</p>
+				<p>vestibulum sit amet turpis</p>
+				<p>magnis interdum pharetra eleifend pulvinar ante lobortis et vel quis</p>
+				<p>feugiat nunc sit quisque</p>
+				<p>vestibulum sit amet turpis</p>
+				<p>magnis interdum pharetra eleifend pulvinar ante lobortis et vel quis</p>
+			</div>
+
+			<div class="sendmsg">
+				<div class="input-group">
+				    <input type="text" class="form-control" placeholder="message">
+				    <span class="input-group-btn">
+				    	<button class="btn btn-primary" type="button">Send</button>
+				    </span>
+				</div><!-- /input-group -->
+			</div>
+
+		</div><!-- chat room -->
+
+		<div class="qroom">
+			
+			<div class="displaymsg">
+				<p>feugiat nunc sit quisque</p>
+				<p>vestibulum sit amet turpis</p>
+				<p>magnis interdum pharetra eleifend pulvinar ante lobortis et vel quis</p>
+				<p>feugiat nunc sit quisque</p>
+				<p>vestibulum sit amet turpis</p>
+				<p>magnis interdum pharetra eleifend pulvinar ante lobortis et vel quis</p>
+				<p>feugiat nunc sit quisque</p>
+				<p>vestibulum sit amet turpis</p>
+				<p>magnis interdum pharetra eleifend pulvinar ante lobortis et vel quis</p>
+				<p>feugiat nunc sit quisque</p>
+				<p>vestibulum sit amet turpis</p>
+				<p>magnis interdum pharetra eleifend pulvinar ante lobortis et vel quis</p>
+			</div>
+
+			<div class="sendmsg">
+				<div class="input-group">
+				    <input type="text" class="form-control" placeholder="message">
+				    <span class="input-group-btn">
+				    	<button class="btn btn-primary" type="button">Send</button>
+				    </span>
+				</div><!-- /input-group -->
+			</div>
+			
+		</div><!-- qroom -->
 
 	</section>
 
@@ -66,6 +123,7 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
 	<script src="../js/5007.js"></script>
 
 </body>
