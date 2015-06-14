@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>NCS | Classroom </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/index.css">
 	</head>
@@ -60,7 +61,7 @@
 
       <div class="row">
       	<div class="col-md-4 classroom">
-      		<h3>F 5007</h3>
+      		<h3>5007</h3>
       		<p>Student : </p>
       		<p>Remaining seat : </p>
       		<p>Now teaching : </p>
@@ -68,7 +69,7 @@
       	</div>
       </div>
 
-    </div> <!-- /container --x>
+    </div> <!-- /container -->
 	</body>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
