@@ -4,10 +4,10 @@ $(function(){
     	axis:"y", 
     	theme:"dark",
     	setTop: "-55px",
+    	mouseWheel:{ scrollAmount: 500 },
 	});
 
 	$('#selectroom li').bind("click", function () {
-	
 		$('#selectroom li').removeClass('active');
 		$(this).addClass('active');
 		var targetName = $(this).attr("data");
@@ -21,8 +21,20 @@ $(function(){
     	setWidth: "100%",
     	setHeight: 300,
     	autoHideScrollbar: true,
+    	mouseWheel:{ scrollAmount: 250 },
 	});
-	
+
+	var hash = window.location.hash;
+	if(hash == '#Seatmap'){
+		$('#selectroom li:eq(0)').click();
+	}
+	else if(hash == '#Chat room'){
+		$('#selectroom li:eq(1)').click();
+	}
+	else if(hash == '#Question room'){
+		$('#selectroom li:eq(2)').click();
+	}
+
 });
 
 
