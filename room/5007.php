@@ -57,6 +57,7 @@
 		
 		<div class="seatmap" >
 			<img src="../img/5007.png">
+			<img src="../img/default_seat.jpg" class="seat-img img-circle img-responsive" alt="">
 		</div><!-- seatmap -->
 
 		<div class="chatroom">
