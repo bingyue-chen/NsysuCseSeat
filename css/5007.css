@@ -39,7 +39,7 @@ hr {
 	color: #0E87A6;
 }
 
-.room{
+.chatroom, .qroom{
 	display: none;
 }
 
