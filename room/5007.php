@@ -7,10 +7,12 @@
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.min.css">
 	<link rel="stylesheet" href="../css/5007.css">
+	<link rel="stylesheet" href="../css/font-awesome.min.css">
 </head>
 <body>
 
-	<sectoin class="header">
+		<sectoin class="header">
+	    <!-- Static navbar -->
 		<nav class="navbar navbar-inverse navbar-static-top">
 	      	<div class="container">
 		        <div class="navbar-header">
@@ -32,14 +34,16 @@
 		                <li><a href="#">5012</a></li>
 		              </ul>
 		            </li>
-		            <li><a href="#about">Sign in</a></li>
 		            <li><a href="#about">About us</a></li>
 		            <li><a href="#contact">Contact us</a></li>
+		          </ul>
+		          <ul class="nav navbar-nav navbar-right">
+					<li><a href="../fbconn/fbconfig.php"><i class="fa fa-facebook-square"></i> Sign in</a></li>
 		          </ul>
 		        </div><!--/.nav-collapse -->
       		</div>
     	</nav>
-	</sectoin>
+    </sectoin>
 
 	<section class="content">
 

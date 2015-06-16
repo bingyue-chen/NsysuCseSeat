@@ -1,3 +1,6 @@
+<?php
+	session_start(); 
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -5,44 +8,49 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
 	</head>
 	<body>
+
+		<sectoin class="header">
 	    <!-- Static navbar -->
-	    <nav class="navbar navbar-default navbar-static-top">
-	      <div class="container">
-	        <div class="navbar-header">
-	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-	            <span class="sr-only">Toggle navigation</span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	          </button>
-	          <a class="navbar-brand" href="#">NsysuCseSeat</a>
-	        </div>
-	        <div id="navbar" class="navbar-collapse collapse">
-	          <ul class="nav navbar-nav">
-	            <li class="active"><a href="#">Home</a></li>
-	            <li><a href="#about">About</a></li>
-	            <li><a href="#contact">Contact</a></li>
-	            <li class="dropdown">
-	              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-	              <ul class="dropdown-menu" role="menu">
-	                <li><a href="#">Action</a></li>
-	                <li><a href="#">Another action</a></li>
-	                <li><a href="#">Something else here</a></li>
-	                <li class="divider"></li>
-	                <li class="dropdown-header">Nav header</li>
-	                <li><a href="#">Separated link</a></li>
-	                <li><a href="#">One more separated link</a></li>
-	              </ul>
-	            </li>
-	          </ul>
-	          <ul class="nav navbar-nav navbar-right">
-	            <li class="active"><a href="./">Static top <span class="sr-only">(current)</span></a></li>
-	          </ul>
-	        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+		<nav class="navbar navbar-inverse navbar-static-top">
+	      	<div class="container">
+		        <div class="navbar-header">
+		          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		            <span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		          </button>
+		          <a class="navbar-brand" href="/NsysuCseSeat/">NsysuCseSeat</a>
+		        </div>
+		        <div id="navbar" class="navbar-collapse collapse">
+		          <ul class="nav navbar-nav">
+		          	 <li class="dropdown">
+		              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Room <span class="caret"></span></a>
+		              <ul class="dropdown-menu roomselect" role="menu">
+		                <!--li class="dropdown-header">工EC</li-->
+		                <li class="active"><a href="/NsysuCseSeat/room/5007.php">5007</a></li>
+		                <li><a href="#">5012</a></li>
+		              </ul>
+		            </li>
+		            <li><a href="#about">About us</a></li>
+		            <li><a href="#contact">Contact us</a></li>
+		          </ul>
+		          <ul class="nav navbar-nav navbar-right">
+		          	<?php if( isset( $_SESSION['FBID'] ) ): ?>
+		          		<li><img src="https://graph.facebook.com/<?php echo $_SESSION['FBID']; ?>/picture"></li>
+						<li class="nav-header"><a href="https://www.facebook.com/profile.php?id=<?php echo $_SESSION['FBID']; ?> ">Facebook fullname</a></li>
+						<li><a href="fbconn/logout.php"><i class="fa fa-facebook-square"></i> Sign out</a></li>
+					<?php else : ?>
+						<li><a href="fbconn/fbconfig.php"><i class="fa fa-facebook-square"></i> Sign in</a></li>
+					<?php endif ?>
+		          </ul>
+		        </div><!--/.nav-collapse -->
+      		</div>
+    	</nav>
+    </sectoin>
 
 
     <div class="container">
@@ -65,7 +73,7 @@
       		<p>Student : </p>
       		<p>Remaining seat : </p>
       		<p>Now teaching : </p>
-      		<p><a class="btn btn-primary" href="#" role="button">Go to clasroom</a></p>
+      		<p><a class="btn btn-primary" href="room/5007.php" role="button">Go to clasroom</a></p>
       	</div>
       </div>
 
