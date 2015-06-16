@@ -1,3 +1,7 @@
+<?php
+	session_start();
+	$_SESSION['uri'] = "room/5007.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
