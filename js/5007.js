@@ -15,6 +15,10 @@ $(function(){
 		$("."+targetName).fadeIn();
 	});
 
+	for( var i = 0 ; i < 20 ; ++i ){
+		
+	}
+
 	$(".displaymsg").mCustomScrollbar({
     	axis:"y", 
     	theme:"dark",

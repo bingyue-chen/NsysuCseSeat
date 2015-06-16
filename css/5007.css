@@ -43,10 +43,120 @@ hr {
 	display: none;
 }
 
-.seatmap img {
-	max-width: 80%;
+#table{
 	display: block;
-	margin : 0 auto; 
+	margin-left: 216px;
+}
+
+.seatmap{
+	overflow: auto;
+	position: relative;
+
+}
+
+.seat-container{
+	display: block;
+	margin: 0 auto;
+}
+
+.row{
+	position: absolute;
+	width: auto;
+}
+
+.row1{
+	top: 20%;
+	left: 465px;
+	width: 270px;
+	margin: auto 0;
+}
+
+.row2{
+	left: -20px;
+	transform: rotate(90deg);
+	top: 45%;
+	width: 540px;
+}
+
+.row3{
+	top: 45%;
+	left: 710px;
+	transform: rotate(90deg);
+	width: 540px;
+}
+
+.row4{
+	top: 45%;
+	left: 190px;
+	transform: rotate(90deg);
+	width: 450px;
+}
+
+.row5{
+	top: 45%;
+	left: 590px;
+	transform: rotate(90deg);
+	width: 450px;
+}
+
+.row6{
+	top: 83%;
+	left: 220px;
+	transform: rotate(17deg);
+	width: 300px;
+}
+
+.row7{
+	top: 83%;
+	left: 710px;
+	transform: rotate(-17deg);
+	width: 300px;
+}
+
+.row8{
+	top: 69%;
+	width: 500px;
+	left: 350px;
+	margin: auto 0;
+	
+}
+
+.seat-img{
+	position: relative;
+	float: left;
+}
+
+.row1 .seat-img{
+	width: 90px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.row2 .seat-img , .row3 .seat-img , .row4 .seat-img , .row5 .seat-img{
+	transform: rotate(-90deg);
+	width: 90px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.row6 .seat-img , .row7 .seat-img{
+	width: 150px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.row6 .seat-img {
+	transform: rotate(-17deg);
+}
+
+ .row7 .seat-img{
+ 	transform: rotate(17deg);	
+}
+
+.row8 .seat-img {
+	width: 250px;
+	padding-left : 100px;
+	padding-right: 100px;
 }
 
 .displaymsg {
