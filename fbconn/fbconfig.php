@@ -17,7 +17,7 @@ use Facebook\HttpClients\FacebookHttpable;
 FacebookSession::setDefaultApplication( '676823935794789','f0e9f02f58f7e0e48c3d58ac2aa4807d' );
 // login helper with redirect_uri
     $uri_postfix = isset( $_SESSION['uri'] ) ? $_SESSION['uri'] : "";
-    $helper = new FacebookRedirectLoginHelper('http://localhost/fbconn/fbconfig.php');
+    $helper = new FacebookRedirectLoginHelper('http://seat.xgnid.me/fbconn/fbconfig.php');
 try {
   $session = $helper->getSessionFromRedirect();
 } catch( FacebookRequestException $ex ) {
