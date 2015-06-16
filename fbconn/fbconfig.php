@@ -16,14 +16,16 @@ use Facebook\HttpClients\FacebookHttpable;
 // init app with app id and secret
 FacebookSession::setDefaultApplication( '676823935794789','f0e9f02f58f7e0e48c3d58ac2aa4807d' );
 // login helper with redirect_uri
-    $uri_postfix = isset( $_SESSION['uri'] ) : $_SESSION['uri'] : "";
-    $helper = new FacebookRedirectLoginHelper('http://seat.xgnid.me/' . $uri_postfix );
+    $uri_postfix = isset( $_SESSION['uri'] ) ? $_SESSION['uri'] : "";
+    $helper = new FacebookRedirectLoginHelper('http://seat.xgnid.me/fbconn/fbconfig.php');
 try {
   $session = $helper->getSessionFromRedirect();
 } catch( FacebookRequestException $ex ) {
+	echo $ex->getMessage();
   // When Facebook returns an error
 } catch( Exception $ex ) {
   // When validation fails or other local issues
+	echo $ex->getMessage();
 }
 // see if we have a session
 if ( isset( $session ) ) {
@@ -40,9 +42,9 @@ if ( isset( $session ) ) {
         $_SESSION['FULLNAME'] = $fbfullname;
 	    $_SESSION['EMAIL'] =  $femail;
     /* ---- header location after session ----*/
-  header("Location: index.php");
+  header("Location: .." . $_SESSION['uri'] );
 } else {
   $loginUrl = $helper->getLoginUrl();
- header("Location: ".$loginUrl);
+ header("Location: ".$loginUrl );
 }
 ?>
