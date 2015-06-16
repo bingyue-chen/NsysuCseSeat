@@ -42,7 +42,13 @@
 		            <li><a href="#contact">Contact us</a></li>
 		          </ul>
 		          <ul class="nav navbar-nav navbar-right">
-					<li><a href="../fbconn/fbconfig.php"><i class="fa fa-facebook-square"></i> Sign in</a></li>
+					<?php if( isset( $_SESSION['FBID'] ) ): ?>
+		          		<li><img clsaa="img-circle img-responsive" src="https://graph.facebook.com/<?php echo $_SESSION['FBID']; ?>/picture"></li>
+						<li class="nav-header"><a href="https://www.facebook.com/profile.php?id=<?php echo $_SESSION['FBID']; ?> "><?php echo $_SESSION['FULLNAME']; ?></a></li>
+						<li><a href="fbconn/logout.php"><i class="fa fa-facebook-square"></i> Sign out</a></li>
+					<?php else : ?>
+						<li><a href="fbconn/fbconfig.php"><i class="fa fa-facebook-square"></i> Sign in</a></li>
+					<?php endif ?>
 		          </ul>
 		        </div><!--/.nav-collapse -->
       		</div>
