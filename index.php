@@ -1,6 +1,6 @@
 <?php
 	session_start(); 
-	$_SESSION['uri'] = "";
+	$_SESSION['uri'] = "/";
 ?>
 <!DOCTYPE html>
 <html>
