@@ -5,6 +5,7 @@ $(function(){
     	theme:"dark",
     	setTop: "-55px",
     	mouseWheel:{ scrollAmount: 500 },
+    	contentTouchScroll: 500,
 	});
 
 	$('#selectroom li').bind("click", function () {
@@ -26,6 +27,7 @@ $(function(){
     	setHeight: 300,
     	autoHideScrollbar: true,
     	mouseWheel:{ scrollAmount: 250 },
+    	contentTouchScroll: 250,
 	});
 
 	var hash = window.location.hash;
