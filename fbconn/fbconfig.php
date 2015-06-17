@@ -41,8 +41,9 @@ if ( isset( $session ) ) {
 	    $_SESSION['FBID'] = $fbid;           
         $_SESSION['FULLNAME'] = $fbfullname;
 	    $_SESSION['EMAIL'] =  $femail;
+      $_SESSION['PIC'] = "https://graph.facebook.com/" . $_SESSION['FBID'] . "/picture";
     /* ---- header location after session ----*/
-  header("Location: .." . $_SESSION['uri'] );
+  header("Location: .." . $_SESSION['uri'] . "?id=" . $_SESSION['FBID'] );
 } else {
   $loginUrl = $helper->getLoginUrl();
  header("Location: ".$loginUrl );

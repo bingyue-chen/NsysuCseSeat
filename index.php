@@ -1,6 +1,10 @@
 <?php
-	session_start(); 
+	session_start();
 	$_SESSION['uri'] = "/";
+	if( isset( $_SESSION['FBID'] ) )
+		$_SESSION['PIC'] =  "https://graph.facebook.com/" . $_SESSION['FBID'] . "/picture";
+	else
+		$_SESSION['PIC'] = "../img/in_seat.jpg";
 ?>
 <!DOCTYPE html>
 <html>
