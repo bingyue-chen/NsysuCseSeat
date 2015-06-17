@@ -96,7 +96,7 @@ $(function(){
 		var index = seat.index( this );
 		var msg = {
 			type : IN_SEAT ,
-			data : { 'index' : index } 
+			data : { 'index' : index , 'img' : GLOBAL_USER_PROFILE_PIC } 
 		}
 		conn.send( JSON.stringify( msg ) );
 	});
