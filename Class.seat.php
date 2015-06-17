@@ -40,4 +40,10 @@ class Seat {
         return $this->seat_map;
     }    
 
+    public function get_img_url( $id ){
+        for( $i = 0 ; $i < $this->max_index ; ++$i )
+            if( $this->seat_map[$i][0] == $id )
+                return $this->seat_map[$i][1];
+    }
+
 }

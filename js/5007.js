@@ -76,7 +76,7 @@ $(function(){
 			}
 		}
 		seat_map[ data[0] ][0] = data[1];
-		$(".seat:eq(" + data[0] + ")").attr( "src" , GLOBAL_USER_PROFILE_PIC );
+		$(".seat:eq(" + data[0] + ")").attr( "src" , data[2] );
 	 }
 
 	 /* data :
