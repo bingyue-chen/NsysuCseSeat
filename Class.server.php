@@ -39,7 +39,8 @@ class Chat implements MessageComponentInterface {
             if( $this->seat_map->insert_seat( $index , $from->resourceId ) ){
                 foreach ($this->clients as $client ) {
                     if( $from !== $client ){
-                        $msg =  [ 'type' => NEW_SEAT , 'data' => [ $index , $from->resourceId ] ];
+                        $imgurl = $this->seat_map->get_img_url( $from->resourceId );
+                        $msg =  [ 'type' => NEW_SEAT , 'data' => [ $index , $from->resourceId , $imgurl ] ];
                         $client->send( json_encode( $msg ));
                     }
                 }
