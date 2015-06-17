@@ -18,11 +18,11 @@ class Seat {
      * if $id == 0 , then the seat is empty
      * if $profile == "" , then the user has not logged in 
      */
-    public function insert_seat( $index , $id ){
+    public function insert_seat( $index , $id , $img ){
 
         if( $this->seat_map[$index][0] == 0 ){
             $this->remove_seat( $id );
-            $this->seat_map[$index] = [ $id , "../img/in_seat.jpg" ];
+            $this->seat_map[$index] = [ $id , $img ];
         }
         else {
             return false;
