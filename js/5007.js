@@ -2,9 +2,11 @@ $(function(){
 	/* defined const */
 	const INIT = 0;
 	const IN_SEAT = 1;
+	const LEAVE_SEAT = 3;
+	const NEW_SEAT = 2;
 	const CLOSE_CONN = 100;
 	const FAIL_IN_SEAT = 404;
-	const NEW_SEAT = 2;
+	
 
 	const seat_index = 31 ; /* row 1 ~ row 8 */
 	var seat_map = new Array( seat_index );
@@ -76,6 +78,18 @@ $(function(){
 		seat_map[ data[0] ][0] = data[1];
 		$(".seat:eq(" + data[0] + ")").attr( "src" , GLOBAL_USER_PROFILE_PIC );
 	 }
+
+	 /* data :
+	  * [ $id ]
+	  */
+	method[LEAVE_SEAT] = function( data ){
+		for( var key in seat_map ){
+			if( seat_map[key][0] == data[0]  ){
+				seat_map[key][0] = 0;
+				$(".seat:eq(" + key + ")").attr( "src" , "../img/default_seat.jpg" );
+			}
+		}
+	}
 	
 
 	seat.on("click" , function(){

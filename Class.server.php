@@ -13,6 +13,7 @@ class Chat implements MessageComponentInterface {
         define("INIT" , 0 );
         define("IN_SEAT" , 1) ;
         define("NEW_SEAT" , 2 );
+        define("LEAVE_SEAT" , 3 );
         define("CLOSE_CONN" , 100);
         define("FAIL_IN_SEAT" , 404);
 		$this->clients = new \SplObjectStorage;
@@ -55,6 +56,13 @@ class Chat implements MessageComponentInterface {
     }
 
     public function onClose(ConnectionInterface $conn) {
+        foreach ($this->clients as $client ) {
+            if( $conn !== $client ){
+                $msg =  [ 'type' => LEAVE_SEAT , 'data' => [ $conn->resourceId ] ];
+                $client->send( json_encode( $msg ));
+            }
+        }
+
         $this->seat_map->remove_seat( $conn->resourceId );
         $this->clients->detach($conn);
     }
