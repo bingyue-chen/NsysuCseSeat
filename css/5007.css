@@ -189,3 +189,16 @@ hr {
 }
 
 
+.prof-img{
+	padding-left: 10px;
+}
+
+@media screen and ( min-width: 768px ){
+	.prof-img{
+		padding-top: 5px;
+	}
+}
+
+.prof-img img{
+	width: 40px;
+}
