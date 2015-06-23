@@ -112,6 +112,7 @@ $(function(){
 	  */
 	method[CHAT_MSG] = function( data ){
 		$('#mCSB_2_container').append('<p>'+data+'</p>');
+		console.log(data);
 		if( $('#selectroom .active').attr("data") !== "chatroom"){
 
 			var target = $('#selectroom li:eq(1) a');
