@@ -16,7 +16,7 @@ $(function(){
 	var seat = $(".seat");
 	var current_seat = -1 ;
 
-	var conn = new WebSocket('ws://seat.xgnid.me:8080');
+	var conn = new WebSocket('ws://seat.xgnid.me/:8080');
 	conn.onopen = function(e) {
 	    console.log("Connection established!");
 	};
@@ -215,6 +215,18 @@ $(function(){
 		}
 		conn.send( JSON.stringify( msg ) );
 		$('#q_msg').val('');
+	});
+
+	$('#chat_msg').keypress(function(event) { 
+    	if (event.which == 13) {
+        	$('#chat_button').click();
+    	}  
+	});
+
+	$('#q_msg').keypress(function(event) { 
+    	if (event.which == 13) {
+        	$('#q_button').click();
+    	}  
 	});
 
 });
