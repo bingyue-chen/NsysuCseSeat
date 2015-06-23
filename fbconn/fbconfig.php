@@ -37,10 +37,12 @@ if ( isset( $session ) ) {
      	$fbid = $graphObject->getProperty('id');              // To Get Facebook ID
  	    $fbfullname = $graphObject->getProperty('name'); // To Get Facebook full name
 	    $femail = $graphObject->getProperty('email');    // To Get Facebook email ID
+		$link = $graphObject->getProperty('link');
 	/* ---- Session Variables -----*/
 	    $_SESSION['FBID'] = $fbid;           
         $_SESSION['FULLNAME'] = $fbfullname;
 	    $_SESSION['EMAIL'] =  $femail;
+		$_SESSION['LINK']  = $link;
       $_SESSION['PIC'] = "https://graph.facebook.com/" . $_SESSION['FBID'] . "/picture";
     /* ---- header location after session ----*/
   header("Location: .." . $_SESSION['uri'] . "?id=" . $_SESSION['FBID'] );

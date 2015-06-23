@@ -33,7 +33,7 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
 		          </button>
-		          <a class="navbar-brand" href="../">NsysuCseSeat</a>
+		          <a class="navbar-brand" href="/">NsysuCseSeat</a>
 		        </div>
 		        <div id="navbar" class="navbar-collapse collapse">
 		          <ul class="nav navbar-nav">
@@ -51,7 +51,7 @@
 		          <ul class="nav navbar-nav navbar-right">
 					<?php if( isset( $_SESSION['FBID'] ) ): ?>
 		          		<li class="prof-img"><img class="img-circle img-responsive" src="https://graph.facebook.com/<?php echo $_SESSION['FBID']; ?>/picture"></li>
-						<li class="nav-header"><a href="https://www.facebook.com/profile.php?id=<?php echo $_SESSION['FBID']; ?> "><?php echo $_SESSION['FULLNAME']; ?></a></li>
+						<li class="nav-header"><a href="<?php echo $_SESSION['LINK']; ?> "><?php echo $_SESSION['FULLNAME']; ?></a></li>
 						<li><a href="../fbconn/logout.php"><i class="fa fa-facebook-square"></i> Sign out</a></li>
 					<?php else : ?>
 						<li><a href="../fbconn/fbconfig.php"><i class="fa fa-facebook-square"></i> Sign in</a></li>
