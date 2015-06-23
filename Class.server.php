@@ -65,10 +65,7 @@ class Chat implements MessageComponentInterface {
             $pic_url = $json->data->url;
         }
         else if($json->type == CHAT_MSG || $json->type == Q_MSG){
-            $name = $from->resourceId;
-            if(isset($_SESSION['FULLNAME'])){
-                $name = $_SESSION['FULLNAME'];
-            }
+            $name = ($json->name != null) ? $json->name : $from->resourceId;
             $msg = [ 'type' => $json->type , 'data' => $name.' : '.$json->message ];
             array_push($this->record, $msg);
             foreach ($this->clients as $client ) {

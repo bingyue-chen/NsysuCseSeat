@@ -21,6 +21,7 @@
 	<script>
 		var GLOBAL_USER_PROFILE_PIC = <?php echo "\"" . $_SESSION['PIC'] . "\"" ; ?> ;
 		var GLOBAL_FB_LINK = <?php  echo "\"" . $_SESSION['LINK'] . "\"" ; ?> ;
+		var GLOBAL_FB_NAME = <?php  echo (isset($_SESSION['FULLNAME'])) ? $_SESSION['FULLNAME'] : "null" ; ?> ;
 	</script>
 </head>
 <body>
