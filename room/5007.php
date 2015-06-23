@@ -21,7 +21,7 @@
 	<script>
 		var GLOBAL_USER_PROFILE_PIC = <?php echo "\"" . $_SESSION['PIC'] . "\"" ; ?> ;
 		var GLOBAL_FB_LINK = <?php  echo "\"" . $_SESSION['LINK'] . "\"" ; ?> ;
-		var GLOBAL_FB_NAME = <?php  echo (isset($_SESSION['FULLNAME'])) ? $_SESSION['FULLNAME'] : "null" ; ?> ;
+		var GLOBAL_FB_NAME = <?php  echo (isset($_SESSION['FULLNAME'])) ? "\"" . $_SESSION['FULLNAME'] . "\"" : "\"null\"" ; ?> ;
 	</script>
 </head>
 <body>
@@ -83,51 +83,51 @@
 		<div class="seatmap" >
 			<img src="../img/5007.png" id="table">
 			<div class="row row1">
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
 			</div>
 			<div class="row row2">
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
 			</div>
 			<div class="row row3">
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
 			</div>
 			<div class="row row4">
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
 			</div>
 			<div class="row row5">
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
 			</div>
 			<div class="row row6">
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
 			</div>
 			<div class="row row7">
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
 			</div>
 			<div class="row row8">
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-link="" >
 			</div>
 		</div><!-- seatmap -->
 
