@@ -1,10 +1,12 @@
 $(function(){
 	/* defined const */
-	const INIT = 0;
-	const IN_SEAT = 1;
-	const LEAVE_SEAT = 3;
-	const NEW_SEAT = 2;
-	const CLOSE_CONN = 100;
+	const INIT         = 0;
+	const IN_SEAT      = 1;
+	const NEW_SEAT     = 2;
+	const LEAVE_SEAT   = 3;
+	const CHAT_MSG     = 4;
+	const Q_MSG        = 5;
+	const CLOSE_CONN   = 100;
 	const FAIL_IN_SEAT = 404;
 	
 
@@ -90,6 +92,20 @@ $(function(){
 			}
 		}
 	}
+
+	/* data :
+	 * [ msg ]
+	  */
+	method[CHAT_MSG] = function( data ){
+		$('#mCSB_2_container').append('<p>'+data+'</p>');
+	}
+
+	/* data :
+	 * [ msg ]
+	  */
+	method[Q_MSG] = function( data ){
+		$('#mCSB_3_container').append('<p>'+data+'</p>');
+	}
 	
 
 	seat.on("click" , function(){
@@ -138,7 +154,23 @@ $(function(){
 		$('#selectroom li:eq(2)').click();
 	}
 
+	$('#chat_button').bind('click', function(){
+		var msg = {
+			type : CHAT_MSG ,
+			message : $('#chat_msg').val()
+		}
+		conn.send( JSON.stringify( msg ) );
+		$('#chat_msg').val('');
+	});
 
+	$('#q_button').bind('click', function(){
+		var msg = {
+			type : Q_MSG ,
+			message : $('#q_msg').val()
+		}
+		conn.send( JSON.stringify( msg ) );
+		$('#q_msg').val('');
+	});
 
 });
 

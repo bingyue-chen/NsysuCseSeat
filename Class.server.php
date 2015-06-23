@@ -10,11 +10,13 @@ class Chat implements MessageComponentInterface {
     protected $pic_url;
 
 	public function __construct(){
-        define("INIT" , 0 );
-        define("IN_SEAT" , 1) ;
-        define("NEW_SEAT" , 2 );
-        define("LEAVE_SEAT" , 3 );
-        define("CLOSE_CONN" , 100);
+        define("INIT"         , 0 );
+        define("IN_SEAT"      , 1) ;
+        define("NEW_SEAT"     , 2 );
+        define("LEAVE_SEAT"   , 3 );
+        define("CHAT_MSG"     , 4 );
+        define("Q_MSG"        , 5 );
+        define("CLOSE_CONN"   , 100);
         define("FAIL_IN_SEAT" , 404);
 		$this->clients = new \SplObjectStorage;
         $this->seat_map = new \Seat( 31 );
@@ -54,6 +56,16 @@ class Chat implements MessageComponentInterface {
         }
         else if( $json->type == INIT ){
             $pic_url = $json->data->url;
+        }
+        else if($json->type == CHAT_MSG || $json->type == Q_MSG){
+            $name = 'guest';
+            if(isset($_SESSION['FULLNAME'])){
+                $name = $_SESSION['FULLNAME'];
+            }
+            $msg = [ 'type' => $json->type , 'data' => $name.' : '.$json->message ];
+            foreach ($this->clients as $client ) {
+                $client->send( json_encode( $msg ));
+            }
         }
     }
 
