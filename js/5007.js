@@ -206,6 +206,8 @@ $(function(){
 	}
 
 	$('#chat_button').bind('click', function(){
+		if($('#chat_msg').val() == '')
+			return;
 		var msg = {
 			type : CHAT_MSG ,
 			message : $('#chat_msg').val(),
@@ -216,6 +218,8 @@ $(function(){
 	});
 
 	$('#q_button').bind('click', function(){
+		if($('#q_msg').val() == '')
+			return;
 		var msg = {
 			type : Q_MSG ,
 			message : $('#q_msg').val(),
