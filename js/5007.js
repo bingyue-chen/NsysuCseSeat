@@ -200,7 +200,8 @@ $(function(){
 	$('#chat_button').bind('click', function(){
 		var msg = {
 			type : CHAT_MSG ,
-			message : $('#chat_msg').val()
+			message : $('#chat_msg').val(),
+			name : GLOBAL_FB_NAME
 		}
 		conn.send( JSON.stringify( msg ) );
 		$('#chat_msg').val('');
@@ -209,7 +210,8 @@ $(function(){
 	$('#q_button').bind('click', function(){
 		var msg = {
 			type : Q_MSG ,
-			message : $('#q_msg').val()
+			message : $('#q_msg').val(),
+			name : GLOBAL_FB_NAME
 		}
 		conn.send( JSON.stringify( msg ) );
 		$('#q_msg').val('');
