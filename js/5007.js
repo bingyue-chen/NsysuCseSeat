@@ -46,7 +46,9 @@ $(function(){
 		console.log( seat_map );
 		for( var key in seat_map ){
 			if( seat_map[key][0] != 0 ){
-				$(".seat:eq(" + key + ")").attr( "src" , seat_map[key][1] );
+				var seat = $(".seat:eq(" + key + ")");
+				seat.attr( "src" , seat_map[key][1] );
+				seat.attr( "fb-link" , seat_map[key][2] );
 			}
 		}
 	};
@@ -56,10 +58,15 @@ $(function(){
 	 * }
 	 */
 	method[IN_SEAT] = function( data ){
-		if( current_seat >= 0 )
-			$(".seat:eq(" + current_seat + ")").attr( "src" , "../img/default_seat.jpg" );	
+		if( current_seat >= 0 ){
+			var seat = $(".seat:eq(" + current_seat + ")");
+			seat.attr( "src" , "../img/default_seat.jpg" );	
+			seat.attr( "fb-link" , "" );
+		}
 		current_seat = data[0];
-		$(".seat:eq(" + data[0] + ")").attr( "src" , GLOBAL_USER_PROFILE_PIC );
+		var seat = $(".seat:eq(" + data[0]  ")");
+		seat.attr( "src" , GLOBAL_USER_PROFILE_PIC );
+		seat.attr( "fb-link" , GLOBAL_FB_LINK );
 	}
 
 	/* data : {
@@ -72,11 +79,15 @@ $(function(){
 			if( seat_map[key][0] == data[1]  ){
 				console.log( data[1] + " is seat at " + key );
 				seat_map[key][0] = 0;
-				$(".seat:eq(" + key + ")").attr( "src" , "../img/default_seat.jpg" );
-			}
+				var seat = $(".seat:eq(" + key + ")");
+				seat.attr( "src" , "../img/default_seat.jpg" );
+				seat.attr( "fb-link" , "" );
+			 }
 		}
 		seat_map[ data[0] ][0] = data[1];
-		$(".seat:eq(" + data[0] + ")").attr( "src" , data[2] );
+		var seat = $(".seat:eq(" + data[0] +  ")");
+		seat.attr( "src" , data[2] );
+		seat.attr( "fb-link" , data[3] );
 	 }
 
 	 /* data :
@@ -86,7 +97,9 @@ $(function(){
 		for( var key in seat_map ){
 			if( seat_map[key][0] == data[0]  ){
 				seat_map[key][0] = 0;
-				$(".seat:eq(" + key + ")").attr( "src" , "../img/default_seat.jpg" );
+				var seat = $(".seat:eq(" + key +")");
+				seat.attr( "src" , "../img/default_seat.jpg" );
+				seat.attr( "fb-link" , "" );
 			}
 		}
 	}

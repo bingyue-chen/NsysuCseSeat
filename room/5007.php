@@ -18,6 +18,7 @@
 	<link rel="stylesheet" href="../css/font-awesome.min.css">
 	<script>
 		var GLOBAL_USER_PROFILE_PIC = <?php echo "\"" . $_SESSION['PIC'] . "\"" ; ?> ;
+		var GLOBAL_FB_LINK = <?php isset( $_SESSION['LINK']) ?  echo "\"" . $_SESSION['LINK'] . "\"" : echo "\"\""; ?>
 	</script>
 </head>
 <body>
