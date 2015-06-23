@@ -111,7 +111,9 @@ $(function(){
 	 * [ msg ]
 	  */
 	method[CHAT_MSG] = function( data ){
-		$('#mCSB_2_container').append('<p>'+data+'</p>');
+		var msg_box = $('#mCSB_2_container')
+		msg_box.append('<p>'+data+'</p>');
+		msg_box.scrollTop = msg_box.scrollHeight;
 		console.log(data);
 		if( $('#selectroom .active').attr("data") !== "chatroom"){
 
