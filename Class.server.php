@@ -37,15 +37,18 @@ class Chat implements MessageComponentInterface {
         if( $json->type == IN_SEAT ){
             $index = $json->data->index;
             $img = $json->data->img;
-            if( $this->seat_map->insert_seat( $index , $from->resourceId , $img ) ){
+			$link = $json->data->link;
+            if( $this->seat_map->insert_seat( $index , $from->resourceId , $img , $link ) ){
                 foreach ($this->clients as $client ) {
                     if( $from !== $client ){
-                        $imgurl = $this->seat_map->get_img_url( $from->resourceId );
-                        $msg =  [ 'type' => NEW_SEAT , 'data' => [ $index , $from->resourceId , $imgurl ] ];
+						$user_data = $this->seat_map->get_img_url( $from->resourceId );
+                        $imgurl = $user_data[0];
+						$other_link = $user_data[1];
+                        $msg =  [ 'type' => NEW_SEAT , 'data' => [ $index , $from->resourceId , $imgurl , $other_link ] ];
                         $client->send( json_encode( $msg ));
                     }
                 }
-                $msg = [ 'type' => IN_SEAT, 'data' => [ $index ] ];
+                $msg = [ 'type' => IN_SEAT, 'data' => [ $index , $link] ];
             }
             else{
                 $msg = [ 'type' => FAIL_IN_SEAT, 'data' => [] ];   

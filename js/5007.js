@@ -66,6 +66,7 @@ $(function(){
 		current_seat = data[0];
 		var seat = $(".seat:eq(" + data[0] + ")");
 		seat.attr( "src" , GLOBAL_USER_PROFILE_PIC );
+		console.log( GLOBAL_FB_LINK );
 		seat.attr( "fb-link" , GLOBAL_FB_LINK );
 	}
 
@@ -109,7 +110,7 @@ $(function(){
 		var index = seat.index( this );
 		var msg = {
 			type : IN_SEAT ,
-			data : { 'index' : index , 'img' : GLOBAL_USER_PROFILE_PIC } 
+			data : { 'index' : index , 'img' : GLOBAL_USER_PROFILE_PIC , 'link' : GLOBAL_FB_LINK } 
 		}
 		conn.send( JSON.stringify( msg ) );
 	});
