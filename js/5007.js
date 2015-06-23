@@ -1,10 +1,12 @@
 $(function(){
 	/* defined const */
-	const INIT = 0;
-	const IN_SEAT = 1;
-	const LEAVE_SEAT = 3;
-	const NEW_SEAT = 2;
-	const CLOSE_CONN = 100;
+	const INIT         = 0;
+	const IN_SEAT      = 1;
+	const NEW_SEAT     = 2;
+	const LEAVE_SEAT   = 3;
+	const CHAT_MSG     = 4;
+	const Q_MSG        = 5;
+	const CLOSE_CONN   = 100;
 	const FAIL_IN_SEAT = 404;
 	
 
@@ -104,6 +106,48 @@ $(function(){
 			}
 		}
 	}
+
+	/* data :
+	 * [ msg ]
+	  */
+	method[CHAT_MSG] = function( data ){
+		$('#mCSB_2_container').append('<p>'+data+'</p>');
+		if( $('#selectroom .active').attr("data") !== "chatroom"){
+
+			var target = $('#selectroom li:eq(1) a');
+			var number = target.children('.number');
+			if(number[0] == null){
+				
+				target.append('<div class="number">1</div>');
+			}
+			else{
+				var value = parseInt(number.html(), 10) + 1;
+				console.log(value);
+				number.html(value);
+			}
+		}
+	}
+
+	/* data :
+	 * [ msg ]
+	  */
+	method[Q_MSG] = function( data ){
+		$('#mCSB_3_container').append('<p>'+data+'</p>');
+		if( $('#selectroom .active').attr("data") !== "qroom"){
+
+			var target = $('#selectroom li:eq(2) a');
+			var number = target.children('.number');
+			if(number[0] == null){
+				
+				target.append('<div class="number">1</div>');
+			}
+			else{
+				var value = parseInt(number.html(), 10) + 1;
+				console.log(value);
+				number.html(value);
+			}
+		}
+	}
 	
 
 	seat.on("click" , function(){
@@ -136,6 +180,7 @@ $(function(){
 		var targetName = $(this).attr("data");
 		$(".seatmap, .chatroom, .qroom").fadeOut();
 		$("."+targetName).fadeIn();
+		$(this).children('a').children('.number').remove();
 	});
 
 	$(".displaymsg").mCustomScrollbar({
@@ -159,7 +204,23 @@ $(function(){
 		$('#selectroom li:eq(2)').click();
 	}
 
+	$('#chat_button').bind('click', function(){
+		var msg = {
+			type : CHAT_MSG ,
+			message : $('#chat_msg').val()
+		}
+		conn.send( JSON.stringify( msg ) );
+		$('#chat_msg').val('');
+	});
 
+	$('#q_button').bind('click', function(){
+		var msg = {
+			type : Q_MSG ,
+			message : $('#q_msg').val()
+		}
+		conn.send( JSON.stringify( msg ) );
+		$('#q_msg').val('');
+	});
 
 });
 

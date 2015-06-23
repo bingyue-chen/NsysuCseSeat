@@ -133,25 +133,13 @@
 		<div class="chatroom">
 
 			<div class="displaymsg">
-				<p>feugiat nunc sit quisque</p>
-				<p>vestibulum sit amet turpis</p>
-				<p>magnis interdum pharetra eleifend pulvinar ante lobortis et vel quis</p>
-				<p>feugiat nunc sit quisque</p>
-				<p>vestibulum sit amet turpis</p>
-				<p>magnis interdum pharetra eleifend pulvinar ante lobortis et vel quis</p>
-				<p>feugiat nunc sit quisque</p>
-				<p>vestibulum sit amet turpis</p>
-				<p>magnis interdum pharetra eleifend pulvinar ante lobortis et vel quis</p>
-				<p>feugiat nunc sit quisque</p>
-				<p>vestibulum sit amet turpis</p>
-				<p>magnis interdum pharetra eleifend pulvinar ante lobortis et vel quis</p>
 			</div>
 
 			<div class="sendmsg">
 				<div class="input-group">
-				    <input type="text" class="form-control" placeholder="message">
+				    <input type="text" id="chat_msg" class="form-control" placeholder="message">
 				    <span class="input-group-btn">
-				    	<button class="btn btn-primary" type="button">Send</button>
+				    	<button id="chat_button" class="btn btn-primary" type="button">Send</button>
 				    </span>
 				</div><!-- /input-group -->
 			</div>
@@ -161,25 +149,13 @@
 		<div class="qroom">
 			
 			<div class="displaymsg">
-				<p>feugiat nunc sit quisque</p>
-				<p>vestibulum sit amet turpis</p>
-				<p>magnis interdum pharetra eleifend pulvinar ante lobortis et vel quis</p>
-				<p>feugiat nunc sit quisque</p>
-				<p>vestibulum sit amet turpis</p>
-				<p>magnis interdum pharetra eleifend pulvinar ante lobortis et vel quis</p>
-				<p>feugiat nunc sit quisque</p>
-				<p>vestibulum sit amet turpis</p>
-				<p>magnis interdum pharetra eleifend pulvinar ante lobortis et vel quis</p>
-				<p>feugiat nunc sit quisque</p>
-				<p>vestibulum sit amet turpis</p>
-				<p>magnis interdum pharetra eleifend pulvinar ante lobortis et vel quis</p>
 			</div>
 
 			<div class="sendmsg">
 				<div class="input-group">
-				    <input type="text" class="form-control" placeholder="message">
+				    <input type="text" id="q_msg" class="form-control" placeholder="question">
 				    <span class="input-group-btn">
-				    	<button class="btn btn-primary" type="button">Send</button>
+				    	<button id="q_button" class="btn btn-primary" type="button">Send</button>
 				    </span>
 				</div><!-- /input-group -->
 			</div>

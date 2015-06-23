@@ -33,6 +33,17 @@ hr {
 	padding: 0 25px 25px 25px;
 }
 
+.number {
+	margin-left: 20px;
+	background: red;
+	display: inline-block;
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+	line-height: 25px;
+	color: white;
+}
+
 .roomname {
 	line-height: 50px;
 	text-align: center;
