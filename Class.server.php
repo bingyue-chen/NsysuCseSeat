@@ -8,14 +8,15 @@ class Chat implements MessageComponentInterface {
     protected $clients;
     protected $seat_map;
     protected $pic_url;
+    private $record = [];
 
 	public function __construct(){
-        define("INIT"         , 0 );
+        define("INIT"         , 0);
         define("IN_SEAT"      , 1) ;
-        define("NEW_SEAT"     , 2 );
-        define("LEAVE_SEAT"   , 3 );
-        define("CHAT_MSG"     , 4 );
-        define("Q_MSG"        , 5 );
+        define("NEW_SEAT"     , 2);
+        define("LEAVE_SEAT"   , 3);
+        define("CHAT_MSG"     , 4);
+        define("Q_MSG"        , 5);
         define("CLOSE_CONN"   , 100);
         define("FAIL_IN_SEAT" , 404);
 		$this->clients = new \SplObjectStorage;
@@ -32,6 +33,9 @@ class Chat implements MessageComponentInterface {
         ];
         $pic_url = "../img/in_seat.jpg";
         $conn->send(json_encode($msg));
+        foreach ($this->record as $key => $msg) {
+            $conn->send(json_encode($msg));
+        }
     }
 
     public function onMessage(ConnectionInterface $from, $msg) {
@@ -61,11 +65,12 @@ class Chat implements MessageComponentInterface {
             $pic_url = $json->data->url;
         }
         else if($json->type == CHAT_MSG || $json->type == Q_MSG){
-            $name = 'guest';
+            $name = $from->resourceId;
             if(isset($_SESSION['FULLNAME'])){
                 $name = $_SESSION['FULLNAME'];
             }
             $msg = [ 'type' => $json->type , 'data' => $name.' : '.$json->message ];
+            array_push($this->record, $msg);
             foreach ($this->clients as $client ) {
                 $client->send( json_encode( $msg ));
             }

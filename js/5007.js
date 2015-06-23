@@ -112,6 +112,20 @@ $(function(){
 	  */
 	method[CHAT_MSG] = function( data ){
 		$('#mCSB_2_container').append('<p>'+data+'</p>');
+		if( $('#selectroom .active').attr("data") !== "chatroom"){
+
+			var target = $('#selectroom li:eq(1) a');
+			var number = target.children('.number');
+			if(number[0] == null){
+				
+				target.append('<div class="number">1</div>');
+			}
+			else{
+				var value = parseInt(number.html(), 10) + 1;
+				console.log(value);
+				number.html(value);
+			}
+		}
 	}
 
 	/* data :
@@ -119,6 +133,20 @@ $(function(){
 	  */
 	method[Q_MSG] = function( data ){
 		$('#mCSB_3_container').append('<p>'+data+'</p>');
+		if( $('#selectroom .active').attr("data") !== "qroom"){
+
+			var target = $('#selectroom li:eq(2) a');
+			var number = target.children('.number');
+			if(number[0] == null){
+				
+				target.append('<div class="number">1</div>');
+			}
+			else{
+				var value = parseInt(number.html(), 10) + 1;
+				console.log(value);
+				number.html(value);
+			}
+		}
 	}
 	
 
@@ -145,6 +173,7 @@ $(function(){
 		var targetName = $(this).attr("data");
 		$(".seatmap, .chatroom, .qroom").fadeOut();
 		$("."+targetName).fadeIn();
+		$(this).children('a').children('.number').remove();
 	});
 
 	$(".displaymsg").mCustomScrollbar({

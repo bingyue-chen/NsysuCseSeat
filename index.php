@@ -37,7 +37,7 @@
 		              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Room <span class="caret"></span></a>
 		              <ul class="dropdown-menu roomselect" role="menu">
 		                <!--li class="dropdown-header">工EC</li-->
-		                <li class="active"><a href="/NsysuCseSeat/room/5007.php">5007</a></li>
+		                <li class="active"><a href="room/5007.php">5007</a></li>
 		                <li><a href="#">5012</a></li>
 		              </ul>
 		            </li>
