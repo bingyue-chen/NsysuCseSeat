@@ -64,7 +64,7 @@ $(function(){
 			seat.attr( "fb-link" , "" );
 		}
 		current_seat = data[0];
-		var seat = $(".seat:eq(" + data[0]  ")");
+		var seat = $(".seat:eq(" + data[0] + ")");
 		seat.attr( "src" , GLOBAL_USER_PROFILE_PIC );
 		seat.attr( "fb-link" , GLOBAL_FB_LINK );
 	}
