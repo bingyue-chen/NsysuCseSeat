@@ -113,7 +113,14 @@ $(function(){
 			data : { 'index' : index , 'img' : GLOBAL_USER_PROFILE_PIC , 'link' : GLOBAL_FB_LINK } 
 		}
 		conn.send( JSON.stringify( msg ) );
+
+		var this_seat = $(this);
+		if( this_seat.attr("fb-link") !== "" && this_seat.attr("fb-link") !== GLOBAL_FB_LINK  ){
+			console.log( this_seat.attr("fb-link") );
+			window.open( this_seat.attr("fb-link") , '_blank' );
+		}
 	});
+
 
 	$("body").mCustomScrollbar({
     	axis:"y", 

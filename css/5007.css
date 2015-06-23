@@ -53,6 +53,10 @@ hr {
 	position: relative;
 }
 
+.seat[fb-link^="h"]:hover{
+	cursor: pointer;
+}
+
 .seat-container{
 	display: block;
 	margin: 0 auto;

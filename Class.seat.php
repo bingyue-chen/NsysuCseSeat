@@ -18,11 +18,11 @@ class Seat {
      * if $id == 0 , then the seat is empty
      * if $profile == "" , then the user has not logged in 
      */
-    public function insert_seat( $index , $id , $img ){
+    public function insert_seat( $index , $id , $img , $link ){
 
         if( $this->seat_map[$index][0] == 0 ){
             $this->remove_seat( $id );
-            $this->seat_map[$index] = [ $id , $img ];
+            $this->seat_map[$index] = [ $id , $img , $link ];
         }
         else {
             return false;
@@ -43,7 +43,7 @@ class Seat {
     public function get_img_url( $id ){
         for( $i = 0 ; $i < $this->max_index ; ++$i )
             if( $this->seat_map[$i][0] == $id )
-                return $this->seat_map[$i][1];
+                return [ $this->seat_map[$i][1] , $this->seat_map[$i][2] ];
     }
 
 }
