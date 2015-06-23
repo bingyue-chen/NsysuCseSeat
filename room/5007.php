@@ -3,8 +3,10 @@
 	$_SESSION['uri'] = "/room/5007.php";
 	if( isset( $_SESSION['FBID'] ) )
 		$_SESSION['PIC'] =  "https://graph.facebook.com/" . $_SESSION['FBID'] . "/picture";
-	else
+	else{
 		$_SESSION['PIC'] = "../img/in_seat.jpg";
+		$_SESSION['LINK'] = "";
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +20,7 @@
 	<link rel="stylesheet" href="../css/font-awesome.min.css">
 	<script>
 		var GLOBAL_USER_PROFILE_PIC = <?php echo "\"" . $_SESSION['PIC'] . "\"" ; ?> ;
+		var GLOBAL_FB_LINK = <?php  echo "\"" . $_SESSION['LINK'] . "\"" ; ?> ;
 	</script>
 </head>
 <body>
@@ -33,7 +36,7 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
 		          </button>
-		          <a class="navbar-brand" href="../">NsysuCseSeat</a>
+		          <a class="navbar-brand" href="/">NsysuCseSeat</a>
 		        </div>
 		        <div id="navbar" class="navbar-collapse collapse">
 		          <ul class="nav navbar-nav">
@@ -51,7 +54,7 @@
 		          <ul class="nav navbar-nav navbar-right">
 					<?php if( isset( $_SESSION['FBID'] ) ): ?>
 		          		<li class="prof-img"><img class="img-circle img-responsive" src="https://graph.facebook.com/<?php echo $_SESSION['FBID']; ?>/picture"></li>
-						<li class="nav-header"><a href="https://www.facebook.com/profile.php?id=<?php echo $_SESSION['FBID']; ?> "><?php echo $_SESSION['FULLNAME']; ?></a></li>
+						<li class="nav-header"><a href="<?php echo $_SESSION['LINK']; ?> "><?php echo $_SESSION['FULLNAME']; ?></a></li>
 						<li><a href="../fbconn/logout.php"><i class="fa fa-facebook-square"></i> Sign out</a></li>
 					<?php else : ?>
 						<li><a href="../fbconn/fbconfig.php"><i class="fa fa-facebook-square"></i> Sign in</a></li>
@@ -79,51 +82,51 @@
 		<div class="seatmap" >
 			<img src="../img/5007.png" id="table">
 			<div class="row row1">
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
 			</div>
 			<div class="row row2">
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
 			</div>
 			<div class="row row3">
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
 			</div>
 			<div class="row row4">
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
 			</div>
 			<div class="row row5">
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
 			</div>
 			<div class="row row6">
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
 			</div>
 			<div class="row row7">
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
 			</div>
 			<div class="row row8">
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
-				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" user-name="空位" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
+				<img src="../img/default_seat.jpg" class="seat seat-img img-circle img-responsive" onerror="this.src='../img/in_seat.jpg'" fb-conn="" >
 			</div>
 		</div><!-- seatmap -->
 
