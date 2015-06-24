@@ -88,6 +88,8 @@ hr {
 .row2{
 	left: -20px;
 	transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
 	top: 45%;
 	width: 540px;
 }
@@ -96,6 +98,8 @@ hr {
 	top: 45%;
 	left: 710px;
 	transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
 	width: 540px;
 }
 
@@ -103,6 +107,8 @@ hr {
 	top: 45%;
 	left: 190px;
 	transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
 	width: 450px;
 }
 
@@ -110,6 +116,8 @@ hr {
 	top: 45%;
 	left: 590px;
 	transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
 	width: 450px;
 }
 
@@ -117,6 +125,8 @@ hr {
 	top: 83%;
 	left: 220px;
 	transform: rotate(17deg);
+	-webkit-transform: rotate(17deg);
+	-ms-transform: rotate(17deg);
 	width: 300px;
 }
 
@@ -124,6 +134,8 @@ hr {
 	top: 83%;
 	left: 710px;
 	transform: rotate(-17deg);
+	-webkit-transform: rotate(-17deg);
+	-ms-transform: rotate(-17deg);
 	width: 300px;
 }
 
@@ -148,6 +160,8 @@ hr {
 
 .row2 .seat-img , .row3 .seat-img , .row4 .seat-img , .row5 .seat-img{
 	transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
 	width: 90px;
 	padding-left: 20px;
 	padding-right: 20px;
@@ -161,10 +175,14 @@ hr {
 
 .row6 .seat-img {
 	transform: rotate(-17deg);
+	-webkit-transform: rotate(-17deg);
+	-ms-transform: rotate(-17deg);
 }
 
  .row7 .seat-img{
  	transform: rotate(17deg);	
+ 	-webkit-transform: rotate(17deg);	
+ 	-ms-transform: rotate(17deg);	
 }
 
 .row8 .seat-img {
