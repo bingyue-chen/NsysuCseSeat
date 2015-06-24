@@ -112,7 +112,9 @@ $(function(){
 	  */
 	method[CHAT_MSG] = function( data ){
 		$('#mCSB_2_container').append('<p>'+data+'</p>');
-		console.log(data);
+		var top = 265 - $('#mCSB_2_container').height();
+		$('#mCSB_2_container').css('top', top+'px');
+
 		if( $('#selectroom .active').attr("data") !== "chatroom"){
 
 			var target = $('#selectroom li:eq(1) a');
@@ -134,6 +136,9 @@ $(function(){
 	  */
 	method[Q_MSG] = function( data ){
 		$('#mCSB_3_container').append('<p>'+data+'</p>');
+		var top = 265 - $('#mCSB_3_container').height();
+		$('#mCSB_3_container').css('top', top+'px');
+
 		if( $('#selectroom .active').attr("data") !== "qroom"){
 
 			var target = $('#selectroom li:eq(2) a');
@@ -171,8 +176,8 @@ $(function(){
     	axis:"y", 
     	theme:"dark",
     	setTop: "-55px",
-    	mouseWheel:{ scrollAmount: 500 },
-    	contentTouchScroll: 500,
+    	mouseWheel:{ scrollAmount: 400 },
+    	contentTouchScroll: 400,
 	});
 
 	$('#selectroom li').bind("click", function () {
